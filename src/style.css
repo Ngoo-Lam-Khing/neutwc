@@ -11,39 +11,16 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 20px;
-  --font-size: 2rem;
+  --font-size: 40px;
 }
+
+
 * {
   box-sizing: border-box;
-}
-
-body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
 #app {
   width: 100vw;
@@ -51,26 +28,24 @@ button:focus-visible {
   margin: 0 auto;
   text-align: center;
   background-color: #0e100f;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.07) 2px,
-      transparent 2px
-    ),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 2px, transparent 2px),
-    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 }
 
-@media (prefers-color-scheme: light) {
+
+
+@media screen and (min-width: 375px) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --font-size: 60px;
   }
-  a:hover {
-    color: #747bff;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --font-size: 80px;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@media screen and (min-width: 1200px) {
+  :root {
+    --font-size: 100px;
   }
 }

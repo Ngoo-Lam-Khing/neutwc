@@ -5,20 +5,45 @@
 <script setup></script>
 
 <style scoped lang="scss">
-
-.square {
-  width: var(--font-size);
-  height: var(--font-size);
-  background-color: #fff;
-  outline: 1px solid red;
-
-  &.active {
-    background-color: #fff;
+@keyframes opacityChange {
+  to {
+    --opacity: 1;
   }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes rotate {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 180deg;
+  }
+}
+.square {
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+  /* Paint an image in the border */
+  background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0)),
+    conic-gradient(
+      from var(--angle),
+      #fff 0deg 90deg,
+      #787878 90deg 180deg,
+      #fff 180deg 270deg,
+      #787878 270deg 360deg
+    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: rotate 0.9s ease infinite;
 
   &.inactive {
-    // background-color: #0e100f;
-    background-color: transparent;
+    animation: none;
+    border-color: #787878;
+    border-image: unset;
   }
 }
 </style>
