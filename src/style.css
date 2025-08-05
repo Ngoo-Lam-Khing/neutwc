@@ -21,6 +21,9 @@
   padding: 0;
 }
 
+html {
+  font-size: var(--font-size);
+}
 
 #app {
   width: 100vw;
@@ -30,7 +33,9 @@
   background-color: #0e100f;
 }
 
-
+button, label {
+  font-size: 0.2rem;
+}
 
 @media screen and (min-width: 375px) {
   :root {

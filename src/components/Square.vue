@@ -25,17 +25,21 @@
   }
 }
 .square {
-  border: 0.1rem solid transparent;
-  border-radius: 0.5rem;
+  width: 100%;
+  height: 100%;
+  border: 0.02rem solid transparent;
+  border-radius: 0.1rem;
   /* Paint an image in the border */
-  background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0)),
-    conic-gradient(
-      from var(--angle),
-      #fff 0deg 90deg,
-      #787878 90deg 180deg,
-      #fff 180deg 270deg,
-      #787878 270deg 360deg
-    );
+  background-image: 
+  linear-gradient(#000, #000),
+  conic-gradient(
+    from var(--angle),
+    #fff 0deg 90deg,
+    #787878 90deg 180deg,
+    #fff 180deg 270deg,
+    #787878 270deg 360deg
+  );
+  
   background-origin: border-box;
   background-clip: padding-box, border-box;
   animation: rotate 0.9s ease infinite;
