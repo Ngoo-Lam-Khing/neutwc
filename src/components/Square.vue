@@ -30,7 +30,6 @@
   );
   background-origin: border-box;
   background-clip: padding-box, border-box;
-  animation: rotate 0.9s ease infinite;
 
   position: relative;
 
@@ -47,10 +46,18 @@
     background-color: #000;
   }
 
+  &.active {
+    animation: rotate 0.9s ease infinite;
+  }
   &.inactive {
     animation: none;
-    border-color: #787878;
-    background-image: unset;
+    background-image: conic-gradient(
+      from var(--angle),
+      #787878 0deg 90deg,
+      #787878 90deg 180deg,
+      #787878 180deg 270deg,
+      #787878 270deg 360deg
+    );
   }
 
   &--heart {
